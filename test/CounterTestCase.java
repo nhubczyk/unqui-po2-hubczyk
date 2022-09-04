@@ -38,9 +38,15 @@ class CounterTestCase {
 	@Test
 	public void testEvenNumbers() {
 		// Getting the even occurrences
-		int amount = counter.contarNumerosImpares();
+		int amount = counter.contarNumerosPares();
 		// I check the amount is the expected one
+		assertEquals(amount, 1);
+	}
+	
+	@Test
+	public void testNumerosImpares() {
+		int amount = counter.contarNumerosImpares();
 		assertEquals(amount, 9);
 	}
-
+	
 }
