@@ -10,7 +10,17 @@ public class Counter {
 	public int contarNumerosPares() {
 		var contador = 0;
 		for (int i=0; i <= numeros.size(); i++ ) {
-			if (i % 2 == 0) {
+			if (i / 2 == 0) {
+				contador ++;
+			}
+		}
+		return contador;
+	}
+	
+	public int contarNumerosImpares() {
+		var contador = 0;
+		for (int i=0; i <= numeros.size(); i++ ) {
+			if (i / 2 != 0) {
 				contador ++;
 			}
 		}
