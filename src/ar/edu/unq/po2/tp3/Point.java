@@ -17,14 +17,20 @@ public class Point {
 	}
 	
 	public void moverPoint(int otroX, int otroY) {
-		Point punto = new Point();
-		punto.setX(otroX);
-		punto.setY(otroY);
+		setX(otroX);
+		setY(otroY);
 	}
 	
-	public void sumarPunto(int otroX, int otroY) {
-		x = x + otroX;
-		y = y + otroY;
+	public Point sumarPunto(Point punto) {
+		return new Point(this.x + punto.getX(), this.y + punto.getY());
+	}
+
+	public int getX() {
+		return x;
+	}
+
+	public int getY() {
+		return y;
 	}
 
 	public void setX(int x) {
