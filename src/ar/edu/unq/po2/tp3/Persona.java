@@ -6,10 +6,12 @@ import java.time.Period;
 public class Persona {
 	private String nombre;
 	private LocalDate fechaDeNacimiento;
+	private int edad;
 	
 	public String getNombre() {
 		return nombre;
 	}
+	
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
@@ -39,6 +41,16 @@ public class Persona {
 		Persona persona;
 		persona = new Persona(nombre, fechaNacimiento);
 		return persona;
+	}
+	
+	public Persona(String nombre, LocalDate fecha, int edad) {
+		this.nombre=nombre;
+		this.fechaDeNacimiento=fecha;
+		this.edad=edad;
+	}
+
+	public int getEdad() {
+		return edad;
 	}
 	
 }
