@@ -6,6 +6,7 @@ import java.time.Period;
 public class Persona {
 	private String nombre;
 	private LocalDate fechaDeNacimiento;
+	private String apellido;
 	private int edad;
 	
 	public String getNombre() {
@@ -15,16 +16,18 @@ public class Persona {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+	
 	public LocalDate getFechaDeNacimiento() {
 		return fechaDeNacimiento;
 	}
+	
 	public void setFechaDeNacimiento(LocalDate fechaDeNacimiento) {
 		this.fechaDeNacimiento = fechaDeNacimiento;
 	}
 	
 	public int edadDeLaPersona() {
 		LocalDate fechaActual = LocalDate.now();
-		Period periodo = Period.between(getFechaDeNacimiento(), fechaActual);
+		Period periodo = Period.between(this.getFechaDeNacimiento(), fechaActual);
 		return periodo.getYears();
 	}
 	
@@ -36,21 +39,26 @@ public class Persona {
 			return false;
 		}
 	}
-	
-	public Persona (String nombre, LocalDate fechaNacimiento) {
-		Persona persona;
-		persona = new Persona(nombre, fechaNacimiento);
-		return persona;
+
+	public Persona(String nombre, LocalDate fecha) {
+		this.setNombre(nombre);
+		this.setFechaDeNacimiento(fecha);
 	}
-	
-	public Persona(String nombre, LocalDate fecha, int edad) {
-		this.nombre=nombre;
-		this.fechaDeNacimiento=fecha;
-		this.edad=edad;
+
+	public String getApellido() {
+		return apellido;
+	}
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
 	}
 
 	public int getEdad() {
 		return edad;
+	}
+
+	public void setEdad(int edad) {
+		this.edad = edad;
 	}
 	
 }
