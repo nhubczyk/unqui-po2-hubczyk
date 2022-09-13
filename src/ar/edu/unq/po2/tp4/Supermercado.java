@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Supermercado {
+	private String descripcion;
 	private String nombre;
 	private String dirección;
 	private List<Producto> productos = new ArrayList<Producto>();
