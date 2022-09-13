@@ -30,10 +30,10 @@ public class Supermercado {
 		return productos.size();
 	}
 	
-	public Double getPrecioTotal() {
+	public Double getPrecioTotal(Double descuento) {
 		var suma = 0.00;
 		for(int i = 0; i < this.getCantidadDeProductos(); i++) {
-			suma = suma + productos.get(i).getPrecio();
+			suma = suma + productos.get(i).getPrecio(descuento);
 		}
 		return suma;
 	}
