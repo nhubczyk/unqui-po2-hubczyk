@@ -8,7 +8,16 @@ public class Producto {
 	public Producto(String nom, Double precio, Boolean esPrecioCuidado) {
 		this.setNombreDelProducto(nom);
 		this.precio=this.descuentoDelProducto(precio);
-		this.esParteDePreciosCuidados=esPrecioCuidado;
+		this.setEsParteDePreciosCuidados(esPrecioCuidado);
+	}
+	
+	public Producto(String nom, Double precio) {
+		this.setNombreDelProducto(nom);
+		this.precio=this.descuentoDelProducto(precio);
+	}
+	
+	public String getNombreDelProducto() {
+		return this.nombreDelProducto;
 	}
 	
 	public void setNombreDelProducto(String nombreDelProducto) {
@@ -21,6 +30,18 @@ public class Producto {
 	
 	public Double descuentoDelProducto(Double precio) {
 		return precio * 0.10;
+	}
+
+	public Boolean getEsParteDePreciosCuidados() {
+		return esParteDePreciosCuidados;
+	}
+
+	public void setEsParteDePreciosCuidados(Boolean esParteDePreciosCuidados) {
+		this.esParteDePreciosCuidados = esParteDePreciosCuidados;
+	}
+
+	public Double getPrecio() {
+		return this.precio;
 	}	
 
 }
