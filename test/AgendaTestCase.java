@@ -1,5 +1,9 @@
-import static org.junit.Assert.assertFalse;
+
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,7 +16,8 @@ public class AgendaTestCase {
 	@BeforeEach
 	public void setUp() {
 		agenda = new Agenda();
-		agenda.agregarNombre("nicolas y racing");
+		agenda.agregarNombre("nicolas");
+		agenda.agregarNombre("lucia");
 	}
 	
 	@Test
@@ -23,5 +28,14 @@ public class AgendaTestCase {
 	@Test
 	public void testAllMatch() {
 		assertTrue(agenda.allMatch("a"));
+	}
+	
+	@Test
+	
+	public void testFilter() {
+		List<String> lista;
+		lista = new ArrayList<String>();
+		lista.add("lucia");
+		assertEquals(agenda.filter("l"), lista);
 	}
 }
