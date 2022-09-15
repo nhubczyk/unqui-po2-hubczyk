@@ -3,6 +3,8 @@ package supermercado;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import ar.edu.unq.po2.tp4.Producto;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ProductoTest {
@@ -18,13 +20,13 @@ public class ProductoTest {
 	
 	@Test
 	public void testConstructor() {
-		assertEquals("Arroz", arroz.getNombre());
+		assertEquals("Arroz", arroz.getNombreDelProducto());
 		assertEquals(new Double(18.9), arroz.getPrecio());
-		assertTrue(arroz.esPrecioCuidado());
+		assertTrue(arroz.getEsParteDePreciosCuidados());
 		
-		assertEquals("Vino", vino.getNombre());
+		assertEquals("Vino", vino.getNombreDelProducto());
 		assertEquals(new Double(55), vino.getPrecio());
-		assertFalse(vino.esPrecioCuidado());
+		assertFalse(vino.getEsParteDePreciosCuidados());
 	}
 	
 	@Test

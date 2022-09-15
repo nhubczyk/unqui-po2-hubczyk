@@ -42,6 +42,10 @@ public class Producto {
 
 	public Double getPrecio() {
 		return this.precio;
+	}
+
+	public void aumentarPrecio(Double d) {
+		this.precio=this.precio + d;
 	}	
 
 }
