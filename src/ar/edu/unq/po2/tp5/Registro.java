@@ -5,4 +5,6 @@ public interface Registro {
 	public Float montoAPagar();
 	
 	public void actualizarStock();
+
+	public Float descuento();
 }
