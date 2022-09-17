@@ -6,7 +6,4 @@ public class ProductoCooperativa extends Producto {
 		super(precio, stock);
 	}
 
-	public Float descuento() {
-		return super.precio * 0.10f;
-	}
 }

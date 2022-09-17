@@ -6,6 +6,10 @@ import java.util.List;
 public class Cliente {
 	private List<Registro> registros = new ArrayList<Registro>();
 	
+	public Cliente() {
+		
+	}
+	
 	public void agregarRegistro(Registro r) {
 		registros.add(r);
 	}

@@ -9,6 +9,10 @@ public class Producto implements Registro {
 		this.setStock(stock);
 	}
 	
+	public Float descuento() {
+		return this.precio * 0.10f;
+	}
+	
 	public Float getPrecio() {
 		return precio;
 	}
