@@ -6,4 +6,7 @@ public class ProductoCooperativa extends Producto {
 		super(precio, stock);
 	}
 
+	public Float montoAPagar(Producto prod) {
+		return super.montoAPagar(prod) * 0.10f;
+	}
 }

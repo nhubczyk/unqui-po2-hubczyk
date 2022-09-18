@@ -1,6 +1,6 @@
 package ar.edu.unq.po2.tp5;
 
-public class Producto implements Registro {
+public class Producto implements Costeable {
 	protected Float precio;
 	private int stock;
 	
@@ -9,13 +9,10 @@ public class Producto implements Registro {
 		this.setStock(stock);
 	}
 	
-	public Float descuento() {
-		return this.precio * 0.10f;
-	}
-	
 	public Float getPrecio() {
 		return precio;
 	}
+	
 	public void setPrecio(Float precio) {
 		this.precio = precio;
 	}
@@ -26,11 +23,11 @@ public class Producto implements Registro {
 		this.stock = stock;
 	}
 	
-	public Float montoAPagar() {
-		return this.getPrecio();
+	public Float montoAPagar(Producto prod) {
+		var suma = 0.00f;
+		suma = this.getPrecio() + prod.getPrecio();
+		stock = stock - 1;
+		return suma;
 	}
 	
-	public void actualizarStock() {
-		this.stock=this.stock -1;
-	}
 }

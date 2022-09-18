@@ -4,17 +4,5 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cliente {
-	private List<Registro> registros = new ArrayList<Registro>();
 	
-	public Cliente() {
-		
-	}
-	
-	public void agregarRegistro(Registro r) {
-		registros.add(r);
-	}
-	
-	public Cliente(Registro r) {
-		this.agregarRegistro(r);
-	}
 }
