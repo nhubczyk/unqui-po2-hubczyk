@@ -25,7 +25,7 @@ public class ActividadSemanal {
 	public List<ActividadSemanal> allActivictyFutbol() {
 		List<ActividadSemanal> lista = new ArrayList<ActividadSemanal>();
 		Stream<ActividadSemanal> stream = lista.stream();
-		return stream.allMatch(s -> s.equals(deporte.FUTBOL));
+		return stream.filter(s -> s.deporte == Deporte.FUTBOL).toList();
 	}
 	
 	public List<ActividadSemanal> allActivity(ActividadSemanal actividad) {
