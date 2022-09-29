@@ -3,19 +3,28 @@
 import java.util.ArrayList;
 
 public class ClienteEMail {
-	
-	 ArrayList<Correo> inbox;
+	private ServidorPop servidor;
+	private String nombreUsuario;
+	private String passUsuario;
+	private ArrayList<Correo> inbox;
 	private ArrayList<Correo> borrados;
 	
-	/*public ClienteEMail(ServidorPop servidor, String nombreUsuario, String pass){
+	public ClienteEMail(ServidorPop servidor, String nombreUsuario, String pass){
 		this.servidor=servidor;
 		this.nombreUsuario=nombreUsuario;
-		this.passusuario=pass;
+		this.passUsuario=pass;
 		this.inbox = new ArrayList<Correo>();
 		this.borrados = new ArrayList<Correo>();
 		this.conectar();
-	}*/
+	}
 	
+	public void recibirNuevos(){
+		this.servidor.recibirNuevos(this.nombreUsuario, this.passUsuario);
+	}
+	
+	public void conectar(){
+		this.servidor.conectar(this.nombreUsuario,this.passUsuario);
+	}
 	
 	public void borrarCorreo(Correo correo){
 		this.inbox.remove(correo);
