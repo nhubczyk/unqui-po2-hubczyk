@@ -14,4 +14,8 @@ public class Producto implements Costeable {
 		return precio;
 	}
 
+	public int getStock() {
+		return stock;
+	}
+	
 }
