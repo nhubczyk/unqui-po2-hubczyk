@@ -9,15 +9,25 @@ public class Temporario extends Empleado {
 
 	@Override
 	protected int getExtra() {
+		return this.extraPorCantidadDeHoras() + this.extraPorHijo();
+	}
+
+	private int extraPorHijo() {
 		if(this.tieneHijos || this.estaCasado) {
 			return 100;
 		}
+		else {
+			return 0;
+		}
+	}
+
+	private int extraPorCantidadDeHoras() {
 		return this.cantidadDeHoras * 5;
 	}
 
 	@Override
 	protected int getImpuesto() {
-		return 13 / 100;
+		return (this.getSueldoBasico() * 13) / 100;
 	}
 
 

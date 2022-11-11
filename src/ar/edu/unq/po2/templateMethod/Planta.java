@@ -18,7 +18,7 @@ public class Planta extends Empleado {
 
 	@Override
 	protected int getImpuesto() {
-		return 13 / 100;
+		return (this.getSueldoBasico() * 13) / 100;
 	}
 
 }
