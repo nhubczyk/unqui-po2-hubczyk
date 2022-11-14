@@ -5,4 +5,6 @@ public interface Codificador {
 	public void encriptar(String texto);
 	
 	public void desencriptar(String texto);
+	
+	public Codificador devolverOtroCodificador();
 }

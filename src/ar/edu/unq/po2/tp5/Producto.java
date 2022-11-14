@@ -1,8 +1,13 @@
 package ar.edu.unq.po2.tp5;
 
 public class Producto implements Costeable {
-	private Double precio;
-	private int stock;
+	protected double precio;
+	protected int stock;
+	
+	public Producto(double precio, int stock) {
+		this.precio=precio;
+		this.stock=stock;
+	}
 	
 	@Override
 	public void cobrar() {

@@ -12,4 +12,9 @@ public class EncriptarPorVocal implements Codificador {
 		texto.replaceAll("texto", "12345");
 	}
 
+	@Override
+	public Codificador devolverOtroCodificador() {
+		return new EncriptarPorNumero();
+	}
+
 }

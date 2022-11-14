@@ -15,4 +15,8 @@ public class EncriptadorNaive {
 	public void setCodificador(Codificador codificador) {
 		this.codificador=codificador;
 	}
+	
+	public void cambiarEstrategia() {
+		this.setCodificador(codificador.devolverOtroCodificador());
+	}
 }
