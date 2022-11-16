@@ -16,7 +16,7 @@ public class EncriptarPorNumero implements Codificador {
 
 	@Override
 	public Codificador devolverOtroCodificador() {
-		return new EncriptarPorNumero();
+		return new EncriptarPorVocal();
 	}
 
 }
