@@ -16,4 +16,8 @@ public class Partido {
 		return this.contrincantes;
 	}
 
+	public String getResultado() {
+		return resultado;
+	}
+
 }

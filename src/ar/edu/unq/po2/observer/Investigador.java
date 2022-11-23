@@ -6,6 +6,7 @@ import java.util.List;
 public class Investigador extends Observador {
 	private List<Articulo> articulos = new ArrayList<Articulo>();
 	
+	@Override
 	public void actualizar(Articulo articulo) {
 		this.articulos.add(articulo);
 	}
