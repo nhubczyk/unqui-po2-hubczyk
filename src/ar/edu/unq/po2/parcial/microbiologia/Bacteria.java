@@ -1,6 +1,6 @@
 package ar.edu.unq.po2.parcial.microbiologia;
 
-public abstract class Bacteria {
+public abstract class Bacteria extends Consumidor {
 	private int ppm;
 	private int edad;
 	
