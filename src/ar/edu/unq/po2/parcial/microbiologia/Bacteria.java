@@ -10,7 +10,14 @@ public abstract class Bacteria extends Consumidor {
 	public int getPpm() {
 		return ppm;
 	}
+	
+	protected void setPpm(int ppm) {
+		this.ppm=ppm;
+	}
+	
 	public int getEdad() {
 		return edad;
 	}
+	
+	
 }
