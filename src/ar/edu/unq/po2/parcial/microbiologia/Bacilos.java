@@ -18,17 +18,12 @@ public class Bacilos extends Bacteria {
 		}
 	}
 
-	@Override
-	public int cantidadDePPMS() {
-		return this.getPpm() * 3;
-	}
-
 	public double getLongitud() {
 		return longitud;
 	}
 	
 	public double cantidadDePPMSPorLongitud() {
-		return this.cantidadDePPMS() * this.getLongitud();
+		return this.getPpm() * this.getLongitud();
 	}
 
 }

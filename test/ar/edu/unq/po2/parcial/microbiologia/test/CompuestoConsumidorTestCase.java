@@ -15,13 +15,22 @@ class CompuestoConsumidorTestCase {
 	
 	@BeforeEach
 	public void SetUp() {
-		poblacion = new Poblacion();
+		poblacion = new Poblacion(5);
 		consumidor = mock(Consumidor.class);
+		
+		when(consumidor.consumoDeOxigeno()).thenReturn(20.4);
 	}
 	
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	void testAddConsumidor() {
+		poblacion.addConsumidor(consumidor);
+		assertEquals(1, poblacion.getConsumidores().size());
+	}
+	
+	@Test
+	void testConsumoDeOxigeno() {
+		poblacion.addConsumidor(consumidor);
+		assertEquals(4.08, poblacion.consumoDeOxigeno());
 	}
 
 }

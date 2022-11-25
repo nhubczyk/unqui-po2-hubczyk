@@ -5,12 +5,20 @@ import java.util.List;
 
 public class Poblacion extends Consumidor {
 	private List<Consumidor> consumidores = new ArrayList<Consumidor>();
-	private int factorDeOxidacion = 10;
+	private int factorDeOxidacion;
+	
+	public Poblacion(int factor) {
+		this.factorDeOxidacion=factor;
+	}
+	
+	public int getFactorDeOxidacion() {
+		return this.factorDeOxidacion;
+	}
 	
 	@Override
 	public double consumoDeOxigeno() {
 		return this.sumatoriaDelConsumoDeLosConsumidores()
-				* this.cantidadDeConsumidores() / this.factorDeOxidacion;
+				* this.cantidadDeConsumidores() / this.getFactorDeOxidacion();
 	}
 
 	public List<Consumidor> getConsumidores() {

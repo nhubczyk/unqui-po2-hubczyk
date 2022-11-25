@@ -10,16 +10,11 @@ public class Cocos extends Bacteria {
 	
 	@Override
 	public double consumoDeOxigeno() {
-		return this.cantidadDePPMS() * this.getRadio();
+		return this.getPpm() * this.getRadio();
 	}
 
 	public double getRadio() {
 		return radio;
-	}
-
-	@Override
-	public int cantidadDePPMS() {
-		return this.getPpm() * 2;
 	}
 
 }

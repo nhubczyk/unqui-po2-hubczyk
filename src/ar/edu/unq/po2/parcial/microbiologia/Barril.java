@@ -2,10 +2,12 @@ package ar.edu.unq.po2.parcial.microbiologia;
 
 public class Barril {
 	private int añoDeFabricacion;
+	private int codigo;
 	private Consumidor miConsumidor;
 
-	public Barril(int año) {
+	public Barril(int año, int codigo) {
 		this.añoDeFabricacion=año;
+		this.codigo=codigo;
 	}
 	
 	public int getAñoDeFabricacion() {
@@ -18,5 +20,9 @@ public class Barril {
 	
 	public double getConsumoDeBacteriasYPoblacion() {
 		return this.getMiConsumidor().consumoDeOxigeno();
+	}
+
+	public int getCodigo() {
+		return codigo;
 	}
 }

@@ -5,7 +5,6 @@ public abstract class Bacteria extends Consumidor {
 	private int edad;
 	
 	public abstract double consumoDeOxigeno();
-	public abstract int cantidadDePPMS();
 
 	public int getPpm() {
 		return ppm;
