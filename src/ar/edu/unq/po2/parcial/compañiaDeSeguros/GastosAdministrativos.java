@@ -13,5 +13,4 @@ public class GastosAdministrativos {
 		return monto;
 	}
 	
-	
 }

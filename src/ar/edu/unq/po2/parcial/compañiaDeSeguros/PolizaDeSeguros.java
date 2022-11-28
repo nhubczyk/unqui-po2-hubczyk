@@ -1,6 +1,7 @@
 package ar.edu.unq.po2.parcial.compañiaDeSeguros;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class PolizaDeSeguros {
@@ -8,8 +9,32 @@ public class PolizaDeSeguros {
 	private List<GastosAdministrativos> gastos = new ArrayList<GastosAdministrativos>();
 	private List<Item> items = new ArrayList<Item>();
 	
+	public PolizaDeSeguros() {
+		this.setMiEstadoDePoliza(new PolizaAbierta());
+	}
+	
+	public void cerrarInventario() {
+		this.getMiEstadoDePoliza().cerrarInventario(this);
+	}
+	
+	public void pagarPoliza() {
+		this.getMiEstadoDePoliza().pagoDeLaPoliza(this);
+	}
+	
+	public void cancelarPoliza() {
+		this.getMiEstadoDePoliza().cancelarPoliza(this);
+	}
+	
 	public void addItem(Item item) {
-		this.items.add(item);
+		this.getMiEstadoDePoliza().addItem(this, item);
+	}
+	
+	public List<Item> getItems() {
+		return this.items;
+	}
+	
+	public List<GastosAdministrativos> getGastos() {
+		return this.gastos;
 	}
 	
 	public double montoAsegurado() {
@@ -21,11 +46,7 @@ public class PolizaDeSeguros {
 	}
 
 	public double montoGastosAdministrativos() {
-		var monto = 0.0;
-		for(GastosAdministrativos gasto :gastos) {
-			monto += gasto.getMonto();
-		}
-		return monto;
+		return this.gastos.stream().mapToDouble(gasto -> gasto.getMonto()).sum();
 	}
 
 	public double porcentajeDelMontoAsegurado() {
@@ -38,5 +59,27 @@ public class PolizaDeSeguros {
 
 	public EstadoDePoliza getMiEstadoDePoliza() {
 		return miEstadoDePoliza;
+	}
+	
+	public void setMiEstadoDePoliza(EstadoDePoliza estado) {
+		this.miEstadoDePoliza=estado;
+	}
+	
+	public void eliminarGastos() {
+		this.gastos = new ArrayList<GastosAdministrativos>();
+	}
+	
+	public void aplicarDescuentoDeLaPoliza() {
+		if(this.getMiEstadoDePoliza() instanceof PolizaAbierta) {
+			this.addGastosAdministrativos(new GastosAdministrativos("BonificacionAdministrativa", -500));
+		}
+		else if (this.getMiEstadoDePoliza() instanceof PolizaCerrada) {
+			this.gastos.stream().max(Comparator.comparingDouble(gasto -> gasto.getMonto()));
+		}
+		else {
+			if (this.getMiEstadoDePoliza() instanceof PolizaVigente) {
+				this.eliminarGastos();
+			}
+		}
 	}
 }

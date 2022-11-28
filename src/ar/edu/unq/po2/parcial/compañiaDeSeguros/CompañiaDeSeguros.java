@@ -22,4 +22,12 @@ public class CompañiaDeSeguros {
 	public BonificacionServices getMiBonificacion() {
 		return miBonificacion;
 	}
+	
+	public void aplicarBonificacion(int codigo, PolizaDeSeguros poliza, String titular) {
+		if (this.getMiBonificacion().codigoValido(codigo)) {
+			poliza.aplicarDescuentoDeLaPoliza();
+			this.getMiBonificacion().anularCodigo(codigo);
+			this.getMiBonificacion().notificarTitular(titular, codigo);
+		}
+	}
 }
